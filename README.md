@@ -1,4 +1,4 @@
-# Deadline ⏰
+# StudySphere📖
 
 > *Never study for that exam alone again.*
 
