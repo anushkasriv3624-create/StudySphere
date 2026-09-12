@@ -1,0 +1,132 @@
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  box-shadow: var(--shadow-md);
+  animation: slideUp 0.3s ease;
+}
+
+.header {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.avatarSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.avatarContainer {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--bg-secondary);
+  box-shadow: var(--shadow-sm);
+  background: var(--bg-input);
+}
+
+.avatarPlaceholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 2rem;
+  font-weight: 600;
+  border: 3px solid var(--bg-secondary);
+}
+
+.uploadLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  color: var(--text-primary);
+}
+
+.uploadLabel:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-light);
+}
+
+.hiddenInput {
+  display: none;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.formGroupFull {
+  grid-column: 1 / -1;
+}
+
+.errorBox {
+  background: var(--error-soft);
+  color: var(--error);
+  padding: 12px;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  margin-bottom: 24px;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.successBox {
+  background: var(--success-soft);
+  color: var(--success);
+  padding: 12px;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  margin-bottom: 24px;
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+@media (max-width: 600px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+}
