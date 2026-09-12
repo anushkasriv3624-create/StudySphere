@@ -52,7 +52,12 @@ export default function Login() {
           </div>
           
           <div className={styles.formGroup}>
-            <label htmlFor="password" className="label">Password</label>
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '6px' }}>
+              <label htmlFor="password" className="label" style={{ marginBottom: 0 }}>Password</label>
+              <Link href="/reset-password" className={styles.authLink} style={{ fontSize: '0.8rem', marginLeft: 0 }}>
+                Forgot password?
+              </Link>
+            </div>
             <input
               id="password"
               type="password"

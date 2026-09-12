@@ -68,6 +68,20 @@ export function AuthProvider({ children }) {
     setProfile(null);
   }
 
+  async function resetPasswordForEmail(email) {
+    const { data, error } = await supabase.auth.resetPasswordForEmail(email, {
+      redirectTo: typeof window !== 'undefined' ? `${window.location.origin}/update-password` : undefined,
+    });
+    if (error) throw error;
+    return data;
+  }
+
+  async function updateUser(attributes) {
+    const { data, error } = await supabase.auth.updateUser(attributes);
+    if (error) throw error;
+    return data;
+  }
+
   async function refreshProfile() {
     if (user) {
       await fetchProfile(user.id);
@@ -81,6 +95,8 @@ export function AuthProvider({ children }) {
     signUp,
     signIn,
     signOut,
+    resetPasswordForEmail,
+    updateUser,
     refreshProfile,
   };
 
