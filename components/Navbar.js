@@ -44,7 +44,6 @@ export default function Navbar() {
     <nav className={styles.nav}>
       <div className={styles.navInner}>
         <Link href="/feed" className={styles.logo}>
-          <span className={styles.logoIcon}>⏰</span>
           StudySphere 📖
         </Link>
 
