@@ -73,7 +73,7 @@ export default function Signup() {
     <div className={styles.authContainer}>
       <div className={styles.authCard}>
         <h1 className={styles.title}>Create Account</h1>
-        <p className={styles.subtitle}>Join Deadline to find study partners.</p>
+        <p className={styles.subtitle}>Join StudySphere to find study partners.</p>
         
         {error && <div className={styles.errorBox}>{error}</div>}
         {success && <div className={styles.successBox}>{success}</div>}

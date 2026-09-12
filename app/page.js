@@ -35,7 +35,7 @@ export default function Home() {
           Never study for that exam <span className={styles.highlight}>alone</span> again.
         </h1>
         <p className={styles.subtitle}>
-          Deadline connects you with classmates who need to study for the same exact thing, right now. No more noisy group chats or asking around.
+          StudySphere connects you with classmates who need to study for the same exact thing, right now. No more noisy group chats or asking around.
         </p>
         
         <div className={styles.ctaGroup}>

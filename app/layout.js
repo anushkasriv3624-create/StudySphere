@@ -6,8 +6,8 @@ import Navbar from '@/components/Navbar';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Deadline | Study Group Coordination',
-  description: 'Find study partners for upcoming exams and assignments before the deadline.',
+  title: 'StudySphere | Study Group Coordination',
+  description: 'Find study partners for upcoming exams and assignments.',
 };
 
 export default function RootLayout({ children }) {
