@@ -46,6 +46,17 @@
   border: 1px solid rgba(239, 68, 68, 0.2);
 }
 
+.successBox {
+  background: var(--success-soft);
+  color: var(--success);
+  padding: 12px;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  margin-bottom: 24px;
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  line-height: 1.5;
+}
+
 .authFooter {
   margin-top: 32px;
   text-align: center;

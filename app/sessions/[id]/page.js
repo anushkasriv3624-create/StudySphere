@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { use, useState, useEffect } from 'react';
 import { supabase } from '@/lib/supabase';
 import { useAuth } from '@/context/AuthContext';
 import { getSessionStatus, formatSessionDate, getCapacityColor, getInitials } from '@/lib/utils';
@@ -12,7 +12,8 @@ import CountdownTimer from '@/components/CountdownTimer';
 import styles from './page.module.css';
 
 export default function SessionDetail({ params }) {
-  const { id } = params;
+  // Next.js 15+ passes params as a Promise – unwrap it with React.use()
+  const { id } = use(params);
   const { user } = useAuth();
   const router = useRouter();
   
@@ -23,19 +24,21 @@ export default function SessionDetail({ params }) {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    fetchSessionDetails();
+    if (id) {
+      fetchSessionDetails();
 
-    // Subscribe to join/leave changes
-    const subscription = supabase
-      .channel(`session:${id}`)
-      .on('postgres_changes', { event: '*', schema: 'public', table: 'session_joins', filter: `session_id=eq.${id}` }, () => {
-        fetchSessionDetails();
-      })
-      .subscribe();
+      // Subscribe to join/leave changes
+      const subscription = supabase
+        .channel(`session:${id}`)
+        .on('postgres_changes', { event: '*', schema: 'public', table: 'session_joins', filter: `session_id=eq.${id}` }, () => {
+          fetchSessionDetails();
+        })
+        .subscribe();
 
-    return () => {
-      supabase.removeChannel(subscription);
-    };
+      return () => {
+        supabase.removeChannel(subscription);
+      };
+    }
   }, [id]);
 
   async function fetchSessionDetails() {
